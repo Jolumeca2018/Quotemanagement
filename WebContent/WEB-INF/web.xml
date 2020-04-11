@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+  id="WebApp_ID" version="4.0">
+
+  <display-name>Project Quotes</display-name>
+  <!-- OPCION ARRAY QUE MUESTRA CONTACTOS -->
+  <servlet>
+  	<servlet-name>contacts</servlet-name>
+  	<servlet-class>objects.ContactServlet</servlet-class> <!-- este hace la llamada al contacts.jsp -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>contacts</servlet-name>
+  	<url-pattern>/contacts</url-pattern> <!-- donde se ubica en la aplicacion el customers.jsp -->
+  </servlet-mapping>
+  
+  <!-- OPCION QUE HACE CRUD DE CUSTOMERS -->
+  <servlet>
+  	<servlet-name>custo</servlet-name>
+  	<servlet-class>objects.CustoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>custo</servlet-name>
+  	<url-pattern>/custo/*</url-pattern>
+  </servlet-mapping>
+   
+  <!-- OPCION QUE HACE LISTADO DE LA BD DE CUSTOMERS --> 
+  <servlet>
+  	<servlet-name>customers</servlet-name>
+  	<servlet-class>objects.AllUsersServlet</servlet-class> <!-- este hace la llamada al customers.jsp -->
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>customers</servlet-name>
+  	<url-pattern>/customers</url-pattern> <!-- donde se ubica en la aplicacion el customers.jsp -->
+  </servlet-mapping>
+ 
+ <!-- OPCION QUE HACE CRUD DE QUOTES -->
+  <servlet>
+  	<servlet-name>quotes</servlet-name>
+  	<servlet-class>objects.QuoteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>quotes</servlet-name>
+  	<url-pattern>/quotes/*</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ 
+  <!-- OPCION QUE HACE LISTADO DE LA BD DE COTIZACIONES -->  
+ <servlet>
+  	<servlet-name>general</servlet-name>
+  	<servlet-class>objects.GeneralServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>general</servlet-name>
+  	<url-pattern>/general</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
